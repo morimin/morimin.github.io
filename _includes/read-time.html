@@ -25,6 +25,8 @@
   <em>{{- read_time -}}{{" "}}{{- site.data.locales[site.lang].post.read_time.unit -}}</em>
   {%- if include.prompt -%}
     {%- assign _prompt_words = read_prompt | number_of_words: 'auto' -%}
+    {% raw %}
     {%- unless _prompt_words > 1 -%}{{ " " }}{%- endunless -%}{{ read_prompt }}
+    {% endraw %}
   {%- endif -%}
 </span>
