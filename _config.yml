@@ -17,7 +17,7 @@ plugins:
   - not-pure-poole
   - jekyll-remote-theme
 
-remote-theme: vszhub/not-pure-poole
+remote_theme: vszhub/not-pure-poole
 
 # Optimize Jekyll
 exclude:
