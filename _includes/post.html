@@ -1,15 +1,24 @@
-<article class="post">
-	<header class="post-header">
-		<div class="post-title"> 
-			{{ page.title | escape }}
-		</div>
-		<time class="post-date dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-			{%- assign date_format = site.date_forma | default: "%Y/%m/%d" -%}
-			{{ page.date | date: date_format }}
-		</time>		
-	</header>
+<div class="content" id="home">
+  <div id="sidebar-button">
+    <img src="/images/sidebar-button.png">
+  </div>
+  <div id="post-info">
+    <div id="cover-photo-container">
+      <img id="cover-photo" src="/images/{{ page.cover }}">
+    </div>
+    <div id="info-container">
+      <h1 id="title">{{ page.title }}</h1>
+      <span id="date">{{ page.date | date_to_string }}</span>
+    </div>
+  </div>
 
-	<div class="post-content">
-		{{ content }}
-	</div>
-</article>
+  <div class="post">
+    {{ content }}
+  </div>
+  <div class="colophon">
+    <p>
+      <span id="pub-date">Published on {{ page.date | date_to_string }}</span> <span class="separator">&bull;</span>
+      <span id="social">Find me on <a href="">Twitter</a>!</span>
+    </p>
+  </div>
+</div>
