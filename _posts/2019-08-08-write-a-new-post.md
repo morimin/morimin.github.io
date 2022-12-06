@@ -289,7 +289,7 @@ There are several types of prompts: `tip`, `info`, `warning`, and `danger`. They
 ```
 {: .nolineno }
 
-### Filepath Hightlight
+[//]: # (### Filepath Hightlight)
 
 ```md
 `/path/to/a/file.extend`{: .filepath}
