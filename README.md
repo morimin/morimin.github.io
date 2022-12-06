@@ -1,146 +1,189 @@
-[English] [[日本語](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/README-jp.md#readme)] [[Português do Brasil](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/README-pt.md#readme)]
+# Hamilton <!-- omit in toc -->
 
-## Mr. Green Jekyll Theme
+A minimal and beautiful Jekyll theme best for writing and note-taking.
 
-<!-- readme -->
+The original purpose of this theme is to be a replacement of the default Jekyll theme -- [Minima](https://github.com/jekyll/minima). Hamilton is an enhancement of Minima but still, keep in minimal.
 
-[<img src="https://img.shields.io/github/issues/MrGreensWorkshop/MrGreen-JekyllTheme" alt="GitHub issues" data-no-image-viewer>](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/issues)
-[<img src="https://img.shields.io/github/forks/MrGreensWorkshop/MrGreen-JekyllTheme" alt="GitHub forks" data-no-image-viewer>](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/README.md#readme)
-[<img src="https://img.shields.io/github/stars/MrGreensWorkshop/MrGreen-JekyllTheme" alt="GitHub stars" data-no-image-viewer>](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/README.md#readme)
-[<img src="https://img.shields.io/github/license/MrGreensWorkshop/MrGreen-JekyllTheme" alt="GitHub license" data-no-image-viewer>](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/LICENSE.txt)
-[<img src="https://shields.io/badge/Github%20Sponsors-Support%20me-blue?logo=GitHub+Sponsors" alt="Support me on GitHub Sponsors" data-no-image-viewer>](https://github.com/sponsors/MrGreensWorkshop "Support me on GitHub Sponsors")
-[<img src="https://shields.io/badge/Patreon-Support%20me-blue?logo=Patreon" alt="Support me on Patreon" data-no-image-viewer>](https://patreon.com/MrGreensWorkshop "Support me on Patreon")
-[<img src="https://shields.io/badge/Ko--fi-Tip%20me-blue?logo=kofi" alt="Tip me via Ko-fi" data-no-image-viewer>](https://ko-fi.com/MrGreensWorkshop "Tip me via Ko-fi")
+Please check out the [demo](https://ngzhio.github.io/jekyll-theme-hamilton/).
 
+| Skins | Displays |
+| ----- | -------- |
+| Daylight | ![screenshot](screenshot.png) |
+| Sunrise/Sunset | ![screenshot](screenshot-sunrise.png) |
+| Midnight | ![screenshot](screenshot-midnight.png) |
+
+## Features <!-- omit in toc -->
+
+- [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag)
+- [Jekyll Feed](https://github.com/jekyll/jekyll-feed)
+- [Jekyll Sitemap](https://github.com/jekyll/jekyll-sitemap)
+- [Google Analytics](https://analytics.google.com/)
+- [MathJax](https://www.mathjax.org/)
+- [Disqus](https://disqus.com/)
+- [Font Awesome](https://fontawesome.com/)
+- TOC
+- Customizable head
+- Configurable page navigation
+- Customizable styles and skins
+- Archive pages implemented in pure Liquid
+
+## Table of Contents <!-- omit in toc -->
+
+- [Installation](#installation)
+- [Configuration](#configuration)
+  - [Optional Parameters](#optional-parameters)
+- [Archive Pages](#archive-pages)
+- [MathJax](#mathjax)
+- [TOC](#toc)
+- [Customization](#customization)
+  - [Metadata](#metadata)
+  - [Navigation](#navigation)
+  - [Social Media](#social-media)
+  - [Skins](#skins)
+  - [More Customized Styles](#more-customized-styles)
+- [License](#license)
+
+## Installation
+
+You can choose one of the following methods to install Hamilton:
+
+- Directly specify the `jekyll-theme-hamilton` gem.
+
+    1. Add `gem 'jekyll-theme-hamilton'` into your `Gemfile`.
+    2. Add the below lines into your `_config.yml`.
+
+        ```yml
+        plugins:
+          - jekyll-theme-hamilton
+        ```
+
+- If your site is hosted on GitHub Pages, you can use [`jekyll-remote-theme`](https://github.com/benbalter/jekyll-remote-theme) to import the master branch of Hamilton.
+
+    1. Add `gem 'jekyll-remote-theme'` into your `Gemfile`.
+    2. Add the below lines into your `_config.yml`.
+
+        ```yml
+        plugins:
+          - jekyll-remote-theme
+
+        remote_theme: ngzhio/jekyll-theme-hamilton
+        ```
+
+## Configuration
+
+After installation, you can run `jekyll serve` to check out your site, but before that, *make sure* the below **required parameters** are configured in your `_config.yml`.
+
+| Parameters | Types | Specifications |
+|:---------- |:----- |:-------------- |
+| `title`    | string | The site title |
+| `disqus`   | string | The Disqus shortname; Unless you don't want to enable the comments system, you must specify this parameter. It is used in the production environment. |
+| `google_analytics` | string | The Google Analytics tracking ID; It is used in the production environment. |
+
+### Optional Parameters
+
+| Parameters | Types | Specifications |
+|:---------- |:----- |:-------------- |
+| `author`   | string | The name of the author of the site; It would be showed in the copyright statement. |
+| `avatar`   | string | The avatar of the author of the site. |
+| `email`    | string | The email of the author of the site. |
+| `location` | string | The current living location of the author of the site. |
+| `skin`     | string | The skin name. See more information on the [Customization](#customization) section. |
+| `lang`     | string | The language of the site; The default value is `en`. |
+| `paginate` | int    | The number of posts on each page. |
+| `date_format` | string | The date format; The default value is `%b %-d, %Y`. |
+| `subscribe` | boolean | Show the subsribe feed button. |
+
+## Archive Pages
+
+Hamilton implements some archive templates in pure Liquid. For example, if you want to create a category archive page, set the below parameters on that page:
+
+```yml
 ---
+layout: archive-taxonomies
+type: categories
+---
+```
 
-<div align="center">
-  <img src="https://jekyll-theme-mrgreen-demo.mrgreensworkshop.com/assets/img/posts/mock1.jpg" height="500" alt="screen_mock">
-  <br><br>
-  <a href="https://jekyll-theme-mrgreen-demo.mrgreensworkshop.com" style="font-weight: bold;" >Click here for live demo</a>
-</div>
+Or a tag archive page:
 
+```yml
+layout: archive-taxonomies
+type: tags
+```
 
-### Introduction
+Or archive by years:
 
-<!-- outline-start -->
+```yml
+layout: archive-years
+```
 
-[Mr. Green](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme) is a multilingual theme generated with [Jekyll](https://jekyllrb.com/) and fully compatible with [GitHub Pages](https://pages.github.com/).
+## MathJax
 
-<!-- outline-end -->
+You can enable MathJax on each post or page, just set `math: true` on that page.
 
-I was going to make my website and thought if I did it as a template, I could share it with the open source community. That's why I decided to build it as a theme. I've worked so hard to make this possible, so please consider [supporting my work](#you-can-support-my-work). Thanks.
+## TOC
 
-### Features
+If you want to show the Table of Contents of a post or page on the left sidebar, just set `toc: true` on that page.
 
-- Multilingual web site
-  - English (default), Japanese, Brazilian Portuguese
-- Recommended language offer feature
-- Auto Navigation Button adder with icon enable disable options
-- Layouts for `Home`, `About`, `Archives`, `Post-list`, `Links`, `Projects` and more
-- Color scheme switching options (Dark light)
-- Auto Contact option adder
-- Auto image referrer (no need to add full path for images. Just add `:` in front of it.)
-- image lazy loader, image viewer
-- Cool Footer with creative commons licensing
-- Movable Table of Contents modal box for Posts
-- Post Share Options
-- Post-listing by Category or Tags
-- Comments for posts
-  - [Disqus](https://disqus.com)
-- Selectable numbered pagination or scroll to load type
-- Sitemap feature
-- Search Engine Optimization (SEO)
-  - [Schema Markup](https://schema.org)
-  - [Open Graph](https://ogp.me/)
-  - [Twitter](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary)
-- Analytics (Google Analytics)
-- Cookie consent feature
-- Site Search feature
-- Code Compression for small footprint (`HTML` `JS` `SCSS`)
-- Mobile App support
-- Mobile device friendly (Tested on Android and IOS)
-- Well organized folder structure for developers (Tested on Chrome, Safari, FireFox)
+## Customization
 
-### Installation
+### Metadata
 
-#### Github pages
+You can create a file `_includes/custom-head.html` in your repository, and add any metadata into that page, e.g. favicons.
 
-1. [Fork the repo](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/fork).
-1. Edit \_config.yml and change `url` like below and push changes.
+### Navigation
 
-   ```yaml
-   url: "https://your_github_user_name.github.io"
-   ```
+You can create a file `_data/navigation.yml` to configure links to some pages. For example,
 
-1. Rename the repo name to `your_github_user_name.github.io`
-1. Check Deploy status `Actions` tab on the repo.
-1. When it's turned to green, your site is up and running at `https://your_github_user_name.github.io`
+```yml
+- title: About
+  url: /about/
+- title: Categories
+  url: /categories/
+- title: Tags
+  url: /tags/
+```
 
-#### Local build
+The navigation bar also supports dropdown submenus:
 
-1. [Install Jekyll](https://jekyllrb.com/docs/installation/) to your OS
-1. Clone or [download](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/releases/latest) the repo, in command prompt go to the folder run `bundle install` command
-1. Build using `bundle exec jekyll serve --watch --host 0.0.0.0 --safe` command
-    - with `--host 0.0.0.0` parameter you can access web server from same lan.
-    - with `--safe` parameter you can make sure no 3rd party plugin added. (for Github pages development)
-1. Your page will be up and running at the `0.0.0.0:4000/` address.
+```yml
+- title: About
+  url: /about/
+- title: Categories
+  url: /categories/
+- title: Tags
+  url: /tags/
+- title: More
+  sublinks:
+    - title: FAQ
+      url: /faq/
+    - title: Docs
+      url: /docs/
+```
 
-### Documentation
+### Social Media
 
-Check out [Mr. Green theme tutorials playlist](https://www.youtube.com/playlist?list=PLAymxPbYHgl-fFy5can7uZBMJtFWVcphD) on YouTube
+You can create a file `_data/social.yml` to configure links to your social media. For example,
 
-### Credits
+```yml
+- title: Twitter
+  url: https://twitter.com/ngzhio
+  icon: fab fa-twitter
+- title: GitHub
+  url: https://github.com/ngzhio/jekyll-theme-hamilton
+  icon: fab fa-github
+```
 
-I want to thank these projects that gave me an opportunity to build my web site.
+### Skins
 
-- [Jekyll](https://jekyllrb.com/) is a static site generator. It takes text written in your favorite markup language and uses layouts to create a static website. You can tweak the site’s look and feel, URLs, the data displayed on the page, and more. It is a wonderful project which is maintained by volunteers.
+You can select a skin by setting `skin` in `_config.yml`. The built-in skins include `daylight`, `midnight`, `sunrise`, and `sunset`. If you don't specify any skin, Hamilton would dynamically select one in these built-in skins according to different hours in a day.
 
-- [GitHub Pages](https://pages.github.com/) Hosted directly from your GitHub repository. Just push the changes and the site will be automatically generated.
+You can also customize a new skin, for example, a skin called `solarized`. You need to copy [`_sass/hamilton/skins/daylight.scss`](_sass/hamilton/skins/daylight.scss) into your repository and then rename it to `solarized.scss`, and adjust some colors in that file. Finally, specify `skin: solarized` in `_config.yml`.
 
-Some of the sites that I find useful while I'm working on this project. [links page](https://jekyll-theme-mrgreen-demo.mrgreensworkshop.com/tabs/links.html)
+### More Customized Styles
 
-### You Can Support My Work
+If you want to create more CSS styles in your site, creating a file `_sass/hamilton/custom-styles.scss`, and putting your code in there, Hamilton would automatically refer to them.
 
-Creating projects starting from nothing takes a great amount of time. Much appreciated if you consider supporting me so that I can continue projects like this and creating new contents for everyone.
+## License
 
-- You can support me on [GitHub Sponsors](https://github.com/sponsors/MrGreensWorkshop "Support me on GitHub Sponsors") (monthly or one time)
-- You can be one of my patrons on [Patreon](https://patreon.com/MrGreensWorkshop "Be my Patron") (monthly)
-- You can tip me via [Ko-fi](https://ko-fi.com/MrGreensWorkshop "Tip Me via Ko-fi") (one time)
-
-### Contribute
-
-Pull Requests are welcome. Please check the instructions in the Issues and Pull Request templates.
-
-### Contributors
-
-Thank you for your contributions!
-
-- Brazilian Portuguese translation by [Vitor DallAcqua](https://github.com/fandangos).
-
-### License
-
-As it says in the [MIT license](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/LICENSE.txt), you can use this theme anywhere as long as you include the license and copyright notice.
-
-`Copyright (c) 2022 Mr. Green's Workshop https://www.MrGreensWorkshop.com`
-
-Please add link to my page or leave the "Pwrd by Mr. Green" link in the footer so I can get credit for my work.
-
-Thank you!
-
-### Other Licenses
-
-Mr. Green Jekyll Theme incorporates libraries written below. Without these libraries, I couldn't make this project possible.
-
-| Library                              | file |
-| :----------------------------------- | ---- |
-| [jQuery v3.6.0](https://github.com/jquery/jquery/tree/3.6.0), Copyright [OpenJS Foundation](https://openjsf.org) and other contributors. jQuery is distributed under the terms of the MIT License. | [jquery-3.6.0.min.js](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/assets/js/jquery-3.6.0.min.js) |
-| [Bootstrap v3.3.7](https://github.com/twbs/bootstrap/tree/v3.3.7), Copyright (c) 2011-2016 Twitter, Inc. Bootstrap is distributed under the terms of the MIT License. | [bootstrap.min.js](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/assets/js/bootstrap.min.js), [bootstrap.min.css](assets/css/bootstrap.min.css) |
-| [Bootstrap Table of Contents v0.4.1](https://github.com/afeld/bootstrap-toc/tree/v0.4.1), Copyright (c) 2015 Aidan Feldman Aidan Feldman. Bootstrap Table of Contents is distributed under the terms of the MIT License. | [bootstrap-toc.min.js](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/assets/js/bootstrap-toc.min.js), [bootstrap-toc.min.css](assets/css/bootstrap-toc.min.css) |
-| [Font Awesome v4.7.0](https://github.com/FortAwesome/Font-Awesome/tree/v4.7.0), Copyright (c) 2017 Dave Gandy. The Font Awesome font is distributed under the terms of the [SIL OFL 1.1](http://scripts.sil.org/OFL). Font Awesome CSS, LESS, and Sass files are distributed under the terms of the [MIT License](https://opensource.org/licenses/mit-license.html). | [font-awesome.min.css](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/assets/css/font-awesome.min.css), [FontAwesome](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/assets/fonts/) |
-| [Lozad.js v1.16.0](https://github.com/ApoorvSaxena/lozad.js/tree/v1.16.0), Copyright (c) 2017 Apoorv Saxena. Lozad.js is distributed under the terms of the MIT License. | [lozad.min.js](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/assets/js/lozad.min.js) |
-| [Magnific Popup v1.1.0](https://github.com/dimsemenov/Magnific-Popup/tree/1.1.0), Copyright (c) 2014-2016 Dmitry Semenov, http://dimsemenov.com. Magnific Popup is distributed under the terms of the MIT License. | [jquery.magnific-popup.min.js](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/assets/js/jquery.magnific-popup.min.js), [magnific-popup.css](assets/css/magnific-popup.css) |
-| [Simple-Jekyll-Search v1.9.2](https://github.com/christian-fei/Simple-Jekyll-Search/tree/v1.9.2), Copyright (c) 2015 Christian Fei. Simple-Jekyll-Search is distributed under the terms of the MIT License. | [simple-jekyll-search-1.9.2.min.js](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/assets/js/simple-jekyll-search-1.9.2.min.js) |
-| [Compress HTML in Jekyll v3.1.0](https://github.com/penibelst/jekyll-compress-html/tree/v3.1.0), Copyright (c) 2014 Anatol Broder. Compress HTML in Jekyll is distributed under the terms of the MIT License. | [compress.liquid](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme/blob/main/_layouts/util/compress.liquid) |
-
-[Mr. Green Jekyll Theme](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme)
+The theme is available as open source under the terms of the [MIT License](LICENSE.txt).
