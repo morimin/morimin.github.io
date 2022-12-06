@@ -7,7 +7,7 @@ domain: ""
 
 # your web site url
 # for GitHub Pages, url: "https://your_github_user_name.github.io"
-url: ""
+url: "https://morimin.github.io"
 
 # path to this site
 # if your page is located at https://your_github_user_name.github.io/blog, then set baseurl: "/blog"
@@ -63,9 +63,9 @@ kramdown:
 plugins:
   - jekyll-paginate
   - jekyll-redirect-from
-  - MrGreen-JekyllTheme
+#  - MrGreen-JekyllTheme
 
-remote-theme: MrGreensWorkshop/MrGreen-JekyllTheme
+remote_theme: MrGreensWorkshop/MrGreen-JekyllTheme
 
 # since GitHub Pages runs jekyll with "--safe" flag, we need to add supported plugins in here. (only github supported plugins are allowed)
 whitelist:

@@ -27,4 +27,4 @@ gem "wdm", "~> 0.1.0", :install_if => Gem.win_platform?
 # HTTP server for local tests
 gem "webrick", "~> 1.7"
 
-gem "MrGreen-JekyllTheme"
+# gem "MrGreen-JekyllTheme" #Could not find gem 'MrGreen-JekyllTheme' in rubygems repository https://rubygems.org/ or installed locally.
