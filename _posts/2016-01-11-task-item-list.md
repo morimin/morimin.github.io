@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Task Item List
-tags: [to-do list]
+tags: [to-do list, test]
 ---
 
 This post tests the style of a task item list.
