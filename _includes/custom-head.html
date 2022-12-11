@@ -3,4 +3,20 @@
 
   1. Head over to https://realfavicongenerator.net/ to add your own favicons.
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
+<!DOCTYPE html>
+<!--<html lang="{{ page.lang | default: site.lang | default: "en" }}">-->
+<html lang="{{ page.lang | default: site.lang | default: "ko-KR" }}">
+
+  <head>
+    {% include head.html %}
+    <!-- google adsense 식별추가-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2185390076315530"
+          crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+  </body>
+
+</html>
+
 {% endcomment %}
