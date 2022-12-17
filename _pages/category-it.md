@@ -1,11 +1,11 @@
 ---
-title: "[ EXCEL / 엑셀 ] 사용 방법/팁 정리"
+title: "IT 카테고리 포스트 목록"
 layout: archive
-permalink: categories/excel
+permalink: categories/it
 author_profile: true
 sidebar_main: true
 ---
 
 
-{% assign posts = site.categories.EXCEL %}
+{% assign posts = site.categories.IT %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

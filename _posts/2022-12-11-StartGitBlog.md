@@ -6,9 +6,9 @@ header:
 [//]: # (  teaser: /assets/images/bio-photo-keyboard-teaser.jpg)
 
 categories:
-  - Blog
+  - ETC
 tags:
-  - Blog
+  - BLOG
 last_modified_at: 2022-12-11
 ---
 
