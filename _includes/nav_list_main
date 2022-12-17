@@ -1,5 +1,3 @@
-<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
-
 {% assign sum = site.posts | size %}
 
 <nav class="nav__list">
@@ -25,8 +23,8 @@
                 </ul>
                 <ul>
                     {% for tag in site.tags %}
-                        {% if tag[0] == "tmp" %}
-                            <li><a href="/categories/stl" class="">C++ STL & 표준 ({{category[1].size}})</a></li>
+                        {% if tag[0] == "LINUX" %}
+                            <li><a href="/tags/linux" class="">- Linux/리눅스 ({{tag[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
