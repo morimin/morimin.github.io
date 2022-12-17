@@ -7,7 +7,7 @@ categories:
     - IT
 tags:
     - [LINUX, Linux, Crontab, 크론탭, 크론탭 시간설정, 크론탭 로그, 크론탭 설정, 크론탭 로그, crontab log, crontab every 5 minutes, 크론탭 반복주기, 크론탭 주기]
-last_modified_at: 2022-12-14
+last_modified_at: 2022-12-17
 ---
 
 <br><br>

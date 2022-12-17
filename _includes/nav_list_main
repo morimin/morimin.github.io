@@ -28,6 +28,13 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
+                <ul>
+                    {% for tag in site.tags %}
+                        {% if tag[0] == "TENSORFLOW" %}
+                            <li><a href="/tags/tensorflow" class="">- TensorFlow/텐서플로우 ({{tag[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
             {% endif %}
         {% endfor %}
       </li>
