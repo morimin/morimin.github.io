@@ -59,5 +59,10 @@
             {% endif %}
         {% endfor %}
       </li>
+      <br>
+      <br>
+      <li>
+        {% include ad/ad_sidebar.html %}
+      </li>
   </ul>
 </nav>
