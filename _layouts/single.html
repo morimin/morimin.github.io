@@ -53,6 +53,9 @@ layout: default
               {% endif %}
             </nav>
           </aside>
+
+        {% include ad/ad_upper_in_content.html %}
+
         {% endif %}
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
@@ -69,6 +72,8 @@ layout: default
           <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
         {% endif %}
       </footer>
+
+      {% include ad/ad_lower_in_content.html %}
 
       {% if page.share %}{% include social-share.html %}{% endif %}
 
