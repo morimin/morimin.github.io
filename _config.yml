@@ -24,7 +24,7 @@ name                     : "SMin"
 description              : "내가 좋아서 하는 깃블로그"
 url                      : "https://asterisco.tistory.com/"
 git_url                  : "https://morimin.github.io"
-baseurl                  : # 서브 경로가 있는 경우 기재
+baseurl                  : "" # 서브 경로가 있는 경우 기재
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 #teaser                   : "/assets/images/bio-photo-keyboard.jpg"
 teaser                   : ""

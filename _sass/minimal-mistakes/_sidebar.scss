@@ -32,7 +32,7 @@
       /* calculate height of nav list
          viewport height - nav height - masthead x-padding
       */
-      height: calc(100vh - #{$nav-height} - 2em);
+      max-height: calc(100vh - #{$nav-height} - 2em);
     }
   }
 
@@ -89,6 +89,13 @@
       position: sticky;
       top: 2em;
       float: right;
+
+      .toc {
+        .toc__menu {
+          overflow-y: auto;
+          max-height: calc(100vh - 7em);
+        }
+      }
     }
   }
 
@@ -115,7 +122,7 @@
    ========================================================================== */
 
 .author__avatar {
-//   display: table-cell;
+  display: table-cell;
   vertical-align: top;
   width: 36px;
   height: 36px;
@@ -127,12 +134,10 @@
   }
 
   img {
-    max-width: 110px;
-//     border-radius: 50%;
+    max-width: 200px;
 
     @include breakpoint($large) {
       padding: 5px;
-//       border: 1px solid $border-color;
     }
   }
 }
@@ -185,7 +190,6 @@
   vertical-align: middle;
   font-family: $sans-serif;
   z-index: 20;
-  position: relative;
   cursor: pointer;
 
   li:last-child {

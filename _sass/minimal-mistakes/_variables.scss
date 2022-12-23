@@ -14,7 +14,7 @@ $indent-var: 1.3em !default;
 
 /* system typefaces */
 $serif: Georgia, Times, serif !default;
-$sans-serif: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", "Roboto", "Segoe UI",
+$sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $monospace: Monaco, Consolas, "Lucida Console", monospace !default;
 
@@ -117,6 +117,10 @@ $link-color-visited: mix(#fff, $link-color, 15%) !default;
 $masthead-link-color: $primary-color !default;
 $masthead-link-color-hover: mix(#000, $primary-color, 25%) !default;
 $navicon-link-color-hover: mix(#fff, $primary-color, 75%) !default;
+
+/* notices */
+$notice-background-mix: 80% !default;
+$code-notice-background-mix: 90% !default;
 
 /* syntax highlighting (base16) */
 $base00: #263238 !default;
