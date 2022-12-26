@@ -35,6 +35,13 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
+                <ul>
+                    {% for tag in site.tags %}
+                        {% if tag[0] == "IT기타" %}
+                            <li><a href="/tags/it_etc" class="">- IT 기타 ({{tag[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
             {% endif %}
         {% endfor %}
       </li>
