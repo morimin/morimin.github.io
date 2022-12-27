@@ -127,10 +127,7 @@ author:
     - label: "TiStory"
       icon: "fab fa-fw fa-tistory"
       url: "https://asterisco.tistory.com"
-    - label: "GitBlog"
-      icon: "fas fa-fw fa-link"
-      #      url: "https://asterisk.or.kr"
-      url: "https://morimin.github.io"
+
 
 # Site Footer
 footer:
@@ -155,7 +152,7 @@ footer:
 #      # url:
     - label: "TiStory"
       icon: "fab fa-fw fa-tistory"
-      url: "https://asterisco.tistory.com/"
+      url: "https://asterisco.tistory.com"
 
 
 # Reading Files
