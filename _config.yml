@@ -22,7 +22,8 @@ title_separator          : "_"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "SMin"
 description              : "내가 좋아서 하는 깃블로그"
-url                      : "https://asterisco.tistory.com/"
+#url                      : "https://asterisco.tistory.com/"
+url                      : "https://morimin.github.io"
 git_url                  : "https://morimin.github.io"
 baseurl                  : "" # 서브 경로가 있는 경우 기재
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
