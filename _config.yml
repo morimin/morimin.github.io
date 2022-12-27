@@ -108,10 +108,10 @@ author:
       icon: "fas fa-fw fa-envelope-square"
 #      url: mailto:wady@hanmail.net
       url: mailto:pandekten55@gmail.com
-    - label: "Blog"
-      icon: "fas fa-fw fa-link"
-#      url: "https://asterisk.or.kr"
-      url: "https://morimin.github.io"
+#    - label: "Blog"
+#      icon: "fas fa-fw fa-link"
+##      url: "https://asterisk.or.kr"
+#      url: "https://morimin.github.io"
 #    - label: "Twitter"
 #      icon: "fab fa-fw fa-twitter-square"
 #      # url: "https://twitter.com/"
@@ -126,7 +126,11 @@ author:
 #      # url: "https://instagram.com/"
     - label: "TiStory"
       icon: "fab fa-fw fa-tistory"
-      url: "https://asterisco.tistory.com/"
+      url: "https://asterisco.tistory.com"
+    - label: "GitBlog"
+      icon: "fas fa-fw fa-link"
+      #      url: "https://asterisk.or.kr"
+      url: "https://morimin.github.io"
 
 # Site Footer
 footer:
