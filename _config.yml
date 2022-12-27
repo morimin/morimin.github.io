@@ -106,12 +106,12 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-#      url: mailto:devinlifeidea@gmail.com
-      url: mailto:wady@hanmail.net
-    - label: "Blog"
-      icon: "fas fa-fw fa-link"
-#      url: "https://asterisk.or.kr"
-      url: "https://morimin.github.io"
+#      url: mailto:wady@hanmail.net
+      url: mailto:pandekten55@gmail.com
+#    - label: "Blog"
+#      icon: "fas fa-fw fa-link"
+##      url: "https://asterisk.or.kr"
+#      url: "https://morimin.github.io"
 #    - label: "Twitter"
 #      icon: "fab fa-fw fa-twitter-square"
 #      # url: "https://twitter.com/"
