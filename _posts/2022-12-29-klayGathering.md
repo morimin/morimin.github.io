@@ -7,7 +7,7 @@ categories:
     - BUSINESS
 tags:
     - [KLAYSWAP, Klaytn, 클레이튼, Klay, 클레이, 클레이스왑, 채굴, 클레이튼 채굴, 클레이 채굴, Klip, 카카오 지갑, 클레이스왑 보상수령, 보상수령, 가상화폐 보상, 가상화폐 채굴]
-last_modified_at: 2022-12-23
+last_modified_at: 2022-12-29
 ---
 
 <br><br>
