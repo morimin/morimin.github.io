@@ -6,7 +6,7 @@ header: ""
 categories:
     - IT
 tags:
-    - [AI, 인공지능, KoGPT API 사용법, KoGPT API 사용, KoGPT API 사용하기, KoGPT API 사용, KoGPT API 사용, KoGPT API 사용하기, 카카오 AI, 카카오 AI 사용하기, 카카오 AI 사용, 카카오 GPT, 카카오 챗봇, 카카오 인공지능, GPT, KoGPT]
+    - [AI, 인공지능, KoGPT API 사용법, KoGPT API 사용, KoGPT API 사용하기, KoGPT API 사용, KoGPT API 사용, KoGPT API 사용하기, 카카오 AI, 카카오 AI 사용하기, 카카오 AI 사용, 카카오 GPT, 카카오 챗봇, 카카오 인공지능, GPT, KoGPT, KoGPT API, chatGPT]
 last_modified_at: 2023-01-01
 ---
 

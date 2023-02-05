@@ -6,7 +6,7 @@ header: ""
 categories:
     - IT
 tags:
-    - [AI, 인공지능, 칼로 API 사용법, 칼로 API 사용, 칼로 API 사용하기, Karlo API 사용, Karlo API 사용, Karlo API 사용하기, 카카오 AI, 카카오 AI 사용하기, 카카오 AI 사용]
+    - [AI, 인공지능, 칼로 API 사용법, 칼로 API 사용, 칼로 API 사용하기, Karlo API 사용, Karlo API 사용, Karlo API 사용하기, 카카오 AI, 카카오 AI 사용하기, 카카오 AI 사용, Karlo, Karlo API]
 last_modified_at: 2022-12-31
 ---
 
