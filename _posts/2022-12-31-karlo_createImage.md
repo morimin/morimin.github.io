@@ -16,7 +16,7 @@ last_modified_at: 2022-12-31
 
 <br><br>
 
-1. 최근에 카카오에서 Dev 신규API 사용 가이드가 메일로 오게 되어서 포스팅을 시작하게 되었다. 
+1.  z최근에 카카오에서 Dev 신규API 사용 가이드가 메일로 오게 되어서 포스팅을 시작하게 되었다. 
 ![](/upload/karlo/01_createImage/00.png)
 
 
