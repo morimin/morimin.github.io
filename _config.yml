@@ -89,11 +89,11 @@ social:
 
 # Analytics
 analytics:
-#  provider               : "google-gtag" # 구글 어날리틱스 등록 false (default), "google", "google-universal", "custom"
-  provider               : "false" # 구글 어날리틱스 등록 false (default), "google", "google-universal", "custom"
+  provider               : "google-gtag" # 구글 어날리틱스 등록 false (default), "google", "google-universal", "custom"
+#  provider               : "false" # 구글 어날리틱스 등록 false (default), "google", "google-universal", "custom"
   google:
 #    tracking_id          : "UA-134677596-2"
-    tracking_id          : ""
+    tracking_id          : "G-HRZ9ZRRYPT"
     anonymize_ip         : # true, false (default)
 
 # Site Author
