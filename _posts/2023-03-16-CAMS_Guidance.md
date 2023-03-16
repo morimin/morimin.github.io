@@ -13,7 +13,12 @@ last_modified_at: 2023-03-16
 
 
 AML자격증인 ACAMS의 CAMS자격증을 공부하기 위한 공부자료가 있어 공유드려봅니다.
-![](/upload/English_Study_Guide_CAMS6.pdf)
+<br>
+
+
+[CAMS 자격증 공부자료 바로가기](https://morimin.github.io/upload/English_Study_Guide_CAMS6.pdf)
+
+
 
 <br><br>
 
