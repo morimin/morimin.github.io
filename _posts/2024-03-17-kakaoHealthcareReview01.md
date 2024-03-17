@@ -57,7 +57,11 @@ last_modified_at: 2024-03-17
 (※ 기계초기화 등을 하게되면 해당 번호가 필요하다고 한다.)
 ![](/upload/review/2403_kakaoHealthCare/day1/10.png)
 
-<br>
+<br><br>
 
+카카오헬스케어의 어플인 '파스타'를 켜면 아래와 같이 내용을 볼 수 있는데, 아직 처음이라 데이터가 안정화기간이 필요한것 같다.
+(※ 안정화 기간은 2-3시간이면 된다고 한다.)
+![](/upload/review/2403_kakaoHealthCare/day1/11.png)
+![](/upload/review/2403_kakaoHealthCare/day1/12.png)
 
 <br><br>
