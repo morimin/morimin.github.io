@@ -12,9 +12,9 @@ last_modified_at: 2024-03-17
 <br><br>
 
 ★ 이전포스트 보기 :
-- 카카오헬스케어 파스타 사용방법(feat.덱스콤) : https://morimin.github.io/etc/kakaoHealthcareReview01/
-- 카카오헬스케어 파스타 장점 : https://morimin.github.io/etc/kakaoHealthcareReview02/
-- 카카오헬스케어 파스타 X 덱스콤 11일 사용 후기 : https://morimin.github.io/etc/kakaoHealthcareReview03/
+- 카카오헬스케어 파스타 사용방법(feat.덱스콤) : [https://morimin.github.io/etc/kakaoHealthcareReview01/](https://morimin.github.io/etc/kakaoHealthcareReview01/)
+- 카카오헬스케어 파스타 장점 : [https://morimin.github.io/etc/kakaoHealthcareReview02/](https://morimin.github.io/etc/kakaoHealthcareReview02/)
+- 카카오헬스케어 파스타 X 덱스콤 11일 사용 후기 : [https://morimin.github.io/etc/kakaoHealthcareReview03/](https://morimin.github.io/etc/kakaoHealthcareReview03/)
 
 <br><br>
 

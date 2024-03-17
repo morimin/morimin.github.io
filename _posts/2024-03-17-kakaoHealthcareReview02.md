@@ -12,8 +12,7 @@ last_modified_at: 2024-03-17
 <br><br>
 
 ★ 이전포스트 보기 :
-- 카카오헬스케어 파스타 사용방법(feat.덱스콤) : https://morimin.github.io/etc/kakaoHealthcareReview01/
-
+- 카카오헬스케어 파스타 사용방법(feat.덱스콤) : [https://morimin.github.io/etc/kakaoHealthcareReview01/](https://morimin.github.io/etc/kakaoHealthcareReview01/)
 <br><br>
 
 카카오톡처럼 친구를 추가할 수가 있는데, 친구로 추가되면 친구의 바이오정보도 볼 수 있다.
