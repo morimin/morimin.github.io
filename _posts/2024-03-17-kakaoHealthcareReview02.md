@@ -1,5 +1,5 @@
 ---
-title: "카카오헬스케어 혈당관리 리뷰02"
+title: "[Review] 카카오헬스케어 혈당관리 리뷰02"
 excerpt: ""
 header: ""
 
