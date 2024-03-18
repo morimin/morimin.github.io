@@ -77,6 +77,13 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
+                <ul>
+                    {% for tag in site.tags %}
+                        {% if tag[0] == "생활" %}
+                            <li><a href="/tags/living" class="">- 생활 ({{tag[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
             {% endif %}
         {% endfor %}
       </li>
@@ -84,6 +91,13 @@
         {% for category in site.categories %}
             {% if category[0] == "ETC" %}
                 <span class="nav__sub-title"><a href="/categories/etc"> ★ 기타 </a></span>
+                <ul>
+                    {% for tag in site.tags %}
+                        {% if tag[0] == "REVIEW" %}
+                            <li><a href="/tags/review" class="">- 리뷰 ({{tag[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
                 <ul>
                     {% for tag in site.tags %}
                         {% if tag[0] == "BLOG" %}

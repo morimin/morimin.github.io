@@ -6,7 +6,7 @@ header: ""
 categories:
     - ETC
 tags:
-    - [BLOG, 카카오헬스케어, KakaoHealthcare, 혈당관리, 파스타, 덱스콤, dexcom]
+    - [REVIEW, 카카오헬스케어, KakaoHealthcare, 혈당관리, 파스타, 덱스콤, dexcom]
 last_modified_at: 2024-03-17
 ---
 <br><br>
