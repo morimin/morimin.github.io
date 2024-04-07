@@ -1,5 +1,5 @@
 ---
-title: "기술경영 관련 포스트 모음"
+title: "기술경영경제 관련 포스트 모음"
 layout: archive
 permalink: categories/business
 author_profile: true

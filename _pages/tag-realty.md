@@ -1,5 +1,5 @@
 ---
-title: "이것저것 리뷰"
+title: "부동산 이야기"
 layout: archive
 permalink: tags/realty
 author_profile: true
