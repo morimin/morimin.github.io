@@ -21,7 +21,8 @@ permissions:
 
 # Allow one concurrent deployment
 concurrency:
-  group: "devshjeon-notion-sync"
+  # group: "devshjeon-notion-sync"
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
