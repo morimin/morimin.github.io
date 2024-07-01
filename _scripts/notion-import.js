@@ -74,22 +74,54 @@ categories :
 tags : 
     - ${tags}
 last_modified_at : ${date}
----`
+---`;
     "<br><br>"
-    
-    const folderPath = ${root}
-    fs.mkdirSync(folderPath, { recursive: true })
+    const mdblocks = await n2m.pageToMarkdown(id);
+    let md = n2m.toMarkdownString(mdblocks)["parent"];
+    if (md === "") {
+      continue;
+    }
+    md = escapeCodeBlock(md);
+    md = replaceTitleOutsideRawBlocks(md);
 
-    const mdBlocks = await n2m.pageToMarkdown(id)
-    let body = n2m.toMarkdownString(mdBlocks)["parent"]
+    const ftitle = `${date}-${title.replaceAll(" ", "-")}.md`;
 
+    let index = 0;
+    let edited_md = md.replace(
+      /!\[(.*?)\]\((.*?)\)/g,
+      function (match, p1, p2, p3) {
+        const dirname = path.join("assets/img", ftitle);
+        if (!fs.existsSync(dirname)) {
+          fs.mkdirSync(dirname, { recursive: true });
+        }
+        const filename = path.join(dirname, `${index}.png`);
+
+        axios({
+          method: "get",
+          url: p2,
+          responseType: "stream",
+        })
+          .then(function (response) {
+            let file = fs.createWriteStream(`${filename}`);
+            response.data.pipe(file);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+        let res;
+        if (p1 === "") res = "";
+        else res = `_${p1}_`;
+
+        return `![${index++}](/${filename})${res}`;
+      }
+    );
 
     //writing to file
-    const fTitle = `${date}-${title}.md`
-    fs.writeFile(path.join(folderPath, fTitle), header + body, (err) => {
+    fs.writeFile(path.join(root, ftitle), fm + edited_md, (err) => {
       if (err) {
-        console.log(err)
+        console.log(err);
       }
-    })
+    });
   }
-})()
+})();
