@@ -12,10 +12,10 @@ const notion = new Client({
 });
 
 function escapeCodeBlock(body) {
-  const regex = /```([\s\S]*?)```/g;
+  const regex = /```([\s\S]*?)```/g
   return body.replace(regex, function (match, htmlBlock) {
-    return "\n{% raw %}\n```" + htmlBlock.trim() + "\n```\n{% endraw %}\n";
-  });
+    return "{% raw %}\n```\n" + htmlBlock + "\n```\n{% endraw %}";
+  })
 }
 
 function replaceTitleOutsideRawBlocks(body) {
