@@ -130,17 +130,17 @@ title: "${title}"${fmtags}${fmcats}
 ---
 `;
     const mdblocks = await n2m.pageToMarkdown(id);
-    let md = n2m.toMarkdownString(mdblocks)["parent"];
-    if (md === "") {
+    let body = n2m.toMarkdownString(mdblocks)["parent"];
+    if (body === "") {
       continue;
     }
-    md = escapeCodeBlock(md);
-    md = replaceTitleOutsideRawBlocks(md);
+    body = escapeCodeBlock(body);
+    body = replaceTitleOutsideRawBlocks(body);
 
     const ftitle = `${date}-${title.replaceAll(" ", "-")}.md`;
 
     let index = 0;
-    let edited_md = md.replace(
+    let edited_md = body.replace(
       /!\[(.*?)\]\((.*?)\)/g,
       function (match, p1, p2, p3) {
         const dirname = path.join("assets/img", ftitle);
