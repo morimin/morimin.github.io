@@ -1,39 +1,80 @@
-const { Client } = require("@notionhq/client")
-const { NotionToMarkdown } = require("notion-to-md")
-const moment = require("moment")
-const moment_timezone = require("moment-timezone")
-const path = require("path")
-const fs = require("fs")
+const { Client } = require("@notionhq/client");
+const { NotionToMarkdown } = require("notion-to-md");
+const moment = require("moment");
+const path = require("path");
+const fs = require("fs");
+const axios = require("axios");
+// or
+// import {NotionToMarkdown} from "notion-to-md";
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
-})
+});
 
+function escapeCodeBlock(body) {
+  const regex = /```([\s\S]*?)```/g;
+  return body.replace(regex, function (match, htmlBlock) {
+    return "\n{% raw %}\n```" + htmlBlock.trim() + "\n```\n{% endraw %}\n";
+  });
+}
+
+function replaceTitleOutsideRawBlocks(body) {
+  const rawBlocks = [];
+  const placeholder = "%%RAW_BLOCK%%";
+  body = body.replace(/{% raw %}[\s\S]*?{% endraw %}/g, (match) => {
+    rawBlocks.push(match);
+    return placeholder;
+  });
+
+  const regex = /\n#[^\n]+\n/g;
+  body = body.replace(regex, function (match) {
+    return "\n" + match.replace("\n#", "\n##");
+  });
+
+  rawBlocks.forEach(block => {
+    body = body.replace(placeholder, block);
+  });
+
+  return body;
+}
 
 // passing notion client to the option
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
 (async () => {
   // ensure directory exists
-  const root = `_posts`
+  const root = "_posts";
+  fs.mkdirSync(root, { recursive: true });
 
-  const databaseId = process.env.DATABASE_ID
-  const response = await notion.databases.query({
+  const databaseId = process.env.DATABASE_ID;
+  let response = await notion.databases.query({
     database_id: databaseId,
     filter: {
-      "and": [
-        {
-          property: "공개",
-          checkbox: {
-            equals: true,
-          },
-        },
-      ],
+      property: "공개",
+      checkbox: {
+        equals: true,
+      },
     },
-  })
-  for (const r of response.results) {
-    const id = r.id
-    
+  });
+
+  const pages = response.results;
+  while (response.has_more) {
+    const nextCursor = response.next_cursor;
+    response = await notion.databases.query({
+      database_id: databaseId,
+      start_cursor: nextCursor,
+      filter: {
+        property: "공개",
+        checkbox: {
+          equals: true,
+        },
+      },
+    });
+    pages.push(...response.results);
+  }
+
+  for (const r of pages) {
+    const id = r.id;
     // date
     let date = moment(r.created_time).format("YYYY-MM-DD");
     let pdate = r.properties?.["날짜"]?.["date"]?.["start"];
@@ -64,18 +105,38 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
         cats.push(n);
       }
     }
-    
-    let header = `---
+
+    // frontmatter
+    let fmtags = "";
+    let fmcats = "";
+    if (tags.length > 0) {
+      fmtags += "\ntags: [";
+      for (const t of tags) {
+        fmtags += t + ", ";
+      }
+      fmtags += "]";
+    }
+    if (cats.length > 0) {
+      fmcats += "\ncategories: [";
+      for (const t of cats) {
+        fmcats += t + ", ";
+      }
+      fmcats += "]";
+    }
+    const fm = `---
 title: ${title}
-excerpt : ""
-header : ""
-categories : 
-    - ${cats}
-tags : 
-    - ${tags}
-last_modified_at : ${date}
----`;
-    "<br><br>"
+excerpt: ""
+header: ""
+
+categories:
+    - ${fmcats}
+tags:
+    - ${fmtags}
+last_modified_at: ${date}
+---
+<br><br>
+
+`;
     const mdblocks = await n2m.pageToMarkdown(id);
     let md = n2m.toMarkdownString(mdblocks)["parent"];
     if (md === "") {
