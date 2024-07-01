@@ -75,6 +75,7 @@ tags :
     - ${tags}
 last_modified_at : ${date}
 ---`
+    "<br><br>"
     
     const folderPath = ${root}
     fs.mkdirSync(folderPath, { recursive: true })
