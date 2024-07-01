@@ -124,18 +124,10 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
       fmcats += "]";
     }
     const fm = `---
-title: ${title}
-excerpt: ""
-header: ""
-
-categories:
-    - ${fmcats}
-tags:
-    - ${fmtags}
-last_modified_at: ${date}
+layout: post
+date: ${date}
+title: "${title}"${fmtags}${fmcats}
 ---
-<br><br>
-
 `;
     const mdblocks = await n2m.pageToMarkdown(id);
     let md = n2m.toMarkdownString(mdblocks)["parent"];
