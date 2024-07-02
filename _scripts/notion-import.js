@@ -48,7 +48,7 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
   let response = await notion.databases.query({
     database_id: databaseId,
     filter: {
-      property: "공개",
+      property: "배포",
       checkbox: {
         equals: true,
       },
@@ -62,7 +62,7 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
       database_id: databaseId,
       start_cursor: nextCursor,
       filter: {
-        property: "공개",
+        property: "배포",
         checkbox: {
           equals: true,
         },
