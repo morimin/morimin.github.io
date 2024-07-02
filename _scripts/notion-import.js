@@ -4,8 +4,6 @@ const moment = require("moment");
 const path = require("path");
 const fs = require("fs");
 const axios = require("axios");
-// or
-// import {NotionToMarkdown} from "notion-to-md";
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
@@ -150,8 +148,8 @@ last_modified_at: ${date}
     let edited_md = body.replace(
       /!\[(.*?)\]\((.*?)\)/g,
       function (match, p1, p2, p3) {
-        const dirname = path.join("assets/img", ftitle);
-        // const dirname = path.join("upload", ftitle);
+        // const dirname = path.join("assets/img", ftitle);
+        const dirname = path.join("upload", ftitle);
         if (!fs.existsSync(dirname)) {
           fs.mkdirSync(dirname, { recursive: true });
         }
