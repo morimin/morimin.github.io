@@ -150,7 +150,7 @@ last_modified_at: ${date}
     let edited_md = body.replace(
       /!\[(.*?)\]\((.*?)\)/g,
       function (match, p1, p2, p3) {
-        const dirname = path.join("assets/img", ftitle);
+        const dirname = path.join("upload", ftitle);
         if (!fs.existsSync(dirname)) {
           fs.mkdirSync(dirname, { recursive: true });
         }
