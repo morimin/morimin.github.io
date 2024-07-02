@@ -47,11 +47,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          commit_message: "[Deploy] Save changes in Notion"
+          commit_message: "[BOT] Commit & Deploy from Notion"
           branch: main
-          commit_user_name: importer-bot 🤖
-          commit_user_email: actions@github.com
-          commit_author: importer-bot 🤖 <actions@github.com>
+          commit_user_name: morimin-bot 🤖
+          commit_user_email: morimin@github.com
+          commit_author: morimin-bot 🤖 <morimin@github.com>
  
   build:
     needs: importer
