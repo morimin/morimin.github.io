@@ -1,5 +1,5 @@
 ---
-title: [NOTION] 노션 데이터베이스 API 연동
+title: "[NOTION] 노션 데이터베이스 API 연동"
 excerpt: ""
 header: ""
 
