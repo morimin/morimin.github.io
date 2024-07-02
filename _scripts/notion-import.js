@@ -116,7 +116,7 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
       }
       fmtags += "]";
     }
-    if (cats.length > 0) {
+    if (cats.length >= 2) {
       fmcats += "\ncategories: [";
       for (const t of cats) {
         fmcats += t + ", ";
