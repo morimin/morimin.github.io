@@ -4,7 +4,7 @@ excerpt: ""
 header: ""
 
 categories:
-    - 
+    - IT
 tags:
     - [IT-ETC, 노션 API 연동, 노션API, 노션, 노션 데이터베이스 API 연동, 깃허브 블로그, 깃허브블로그, ]
 last_modified_at: 2024-06-21
