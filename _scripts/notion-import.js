@@ -108,14 +108,14 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
     let fmtags = "";
     let fmcats = "";
     if (tags.length > 0) {
-      fmtags += "\ntags: [";
+      fmtags += "\n[";
       for (const t of tags) {
         fmtags += t + ", ";
       }
       fmtags += "]";
     }
-    if (cats.length >= 2) {
-      fmcats += "\ncategories: [";
+    if (cats.length > 0) {
+      fmcats += "\n[";
       for (const t of cats) {
         fmcats += t + ", ";
       }
@@ -129,7 +129,7 @@ header: ""
 categories:
     - ${fmcats}
 tags:
-    - ${fmtags}
+    - ${fmtags[0]}
 last_modified_at: ${date}
 ---
 <br><br>
