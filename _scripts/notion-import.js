@@ -103,6 +103,15 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
         cats.push(n);
       }
     }
+    // assortment
+    let assrtmnt = [];
+    let passrtmnt = r.properties?.["구분"]?.["select"];
+    for (const t of passrtmnt) {
+      const n = t?.["name"];
+      if (n) {
+        assrtmnt.push(n);
+      }
+    }
 
     // frontmatter
     let fmtags = "";
@@ -122,7 +131,7 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
     //   fmcats += "]";
     // }
     const fm = `---
-title: "${title}"
+title: "${assrtmnt} ${title}"
 excerpt: ""
 header: ""
 
