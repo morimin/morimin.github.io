@@ -104,23 +104,19 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
       }
     }
     // assortment
-    // let assrtmnt = [];
-    // let passrtmnt = r.properties?.["구분"]?.["select"];
-    // for (const t of passrtmnt) {
-    //   const n = t?.["name"];
-    //   if (n) {
-    //     assrtmnt.push(n);
-    //   }
-    // }
-    let assrtmnt = id;
+    let assrtmnt = [];
     let passrtmnt = r.properties?.["구분"]?.["select"];
-    if (passrtmnt?.length > 0) {
-      assrtmnt = passrtmnt[0]?.["plain_text"];
+    for (const t of passrtmnt) {
+      const n = t?.["name"];
+      if (n) {
+        assrtmnt.push(n);
+      }
     }
-
+    
     // frontmatter
     let fmtags = "";
     let fmcats = "";
+    let fmassrtmnt = "";
     if (tags.length > 0) {
       fmtags += "[";
       for (const t of tags) {
@@ -135,8 +131,15 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
     //   }
     //   fmcats += "]";
     // }
+    if (assrtmnt.length > 0) {
+      fmassrtmnt += "[";
+      for (const t of assrtmnt) {
+        fmassrtmnt += t + ", ";
+      }
+      fmassrtmnt += "]";
+    }
     const fm = `---
-title: "${assrtmnt} ${title}"
+title: "${fmassrtmnt} ${title}"
 excerpt: ""
 header: ""
 
