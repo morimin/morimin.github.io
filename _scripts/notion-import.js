@@ -159,7 +159,7 @@ last_modified_at: ${date}
     body = escapeCodeBlock(body);
     body = replaceTitleOutsideRawBlocks(body);
 
-    const ftitle = `${date}-${title.replaceAll(" ", "-")}.md`;
+    const ftitle = `${date}-${title.replaceAll(" ", "_")}.md`;
 
     let index = 0;
     let edited_md = body.replace(
