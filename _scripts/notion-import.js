@@ -105,7 +105,7 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
     }
     // assortment
     let assrtmnt = [];
-    let passrtmnt = r.properties?.["구분"]?.["select"];
+    let passrtmnt = r.properties?.["구분"]?.["multi_select"];
     for (const t of passrtmnt) {
       const n = t?.["name"];
       if (n) {
