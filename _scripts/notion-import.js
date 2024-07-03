@@ -104,13 +104,18 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
       }
     }
     // assortment
-    let assrtmnt = [];
+    // let assrtmnt = [];
+    // let passrtmnt = r.properties?.["구분"]?.["select"];
+    // for (const t of passrtmnt) {
+    //   const n = t?.["name"];
+    //   if (n) {
+    //     assrtmnt.push(n);
+    //   }
+    // }
+    let assrtmnt = id;
     let passrtmnt = r.properties?.["구분"]?.["select"];
-    for (const t of passrtmnt) {
-      const n = t?.["name"];
-      if (n) {
-        assrtmnt.push(n);
-      }
+    if (passrtmnt?.length > 0) {
+      assrtmnt = passrtmnt[0]?.["plain_text"];
     }
 
     // frontmatter
