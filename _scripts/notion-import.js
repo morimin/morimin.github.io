@@ -134,7 +134,7 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
     if (assrtmnt.length > 0) {
       fmassrtmnt += "[";
       for (const t of assrtmnt) {
-        fmassrtmnt += t + ", ";
+        fmassrtmnt += t ;
       }
       fmassrtmnt += "]";
     }
