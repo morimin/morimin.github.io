@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>지도 애플리케이션</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Kakao Map API 스크립트 추가 -->
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=7268fabba180505e412e4e50a08b11ff&libraries=services"></script>
+    <style>
+        #map, #registerMap {
+            width: 100%;
+            height: 600px;
+        }
+        .card {
+            border: 1px solid #ccc;
+        }
+        .card-title {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
+        .fa-star, .fa-star-half-alt {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <h1>지도에 핀 추가하기</h1>
+    <!-- 네비게이션 바 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">지도 애플리케이션</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <span class="navbar-text">안녕하세요, {{ current_user.username }}님!</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">로그아웃</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">로그인</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 위치 권한이 필요하다는 메시지를 표시할 영역 -->
+    <div id="locationMessage" class="alert alert-warning text-center" style="display: none;">
+        위치권한이 필요합니다.
+    </div>
+
+    <!-- 탭 네비게이션 -->
+    <ul class="nav nav-tabs" id="tabMenu">
+        {% if current_user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link" href="#registerView" data-toggle="tab">장소등록</a>
+        </li>
+        {% endif %}
+        <li class="nav-item">
+            <a class="nav-link active" href="#mapView" data-toggle="tab">지도 보기</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#listView" data-toggle="tab">리스트 보기</a>
+        </li>
+    </ul>
+
+    <!-- 탭 콘텐츠 영역 -->
+    <div class="tab-content">
+        {% if current_user.is_authenticated %}
+        <!-- 장소등록 탭 -->
+        <div class="tab-pane fade" id="registerView">
+            <div class="container mt-3">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="storeName">상호명:</label>
+                        <input type="text" class="form-control" id="storeName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">별점 (1.0 ~ 5.0):</label>
+                        <input type="number" step="0.1" min="1" max="5" class="form-control" id="rating" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">코멘트:</label>
+                        <textarea class="form-control" id="comment"></textarea>
+                    </div>
+                    <p>지도를 클릭하여 위치를 선택하세요:</p>
+                    <div id="registerMap"></div>
+                    <input type="hidden" id="latitude">
+                    <input type="hidden" id="longitude">
+                    <button type="submit" class="btn btn-primary mt-3">등록</button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+        <!-- 지도 보기 탭 -->
+        <div class="tab-pane fade show active" id="mapView">
+            <div id="map"></div>
+        </div>
+        <!-- 리스트 보기 탭 -->
+        <div class="tab-pane fade" id="listView">
+            <div id="pinList" class="container mt-3">
+                <!-- 핀 리스트가 여기에 표시됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 코멘트 모달 -->
+    <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="commentModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul id="commentList" class="list-group mb-3">
+              <!-- 코멘트 리스트가 여기에 표시됩니다 -->
+            </ul>
+            <div class="form-group">
+              <label for="commentAuthor">작성자 이름:</label>
+              <input type="text" class="form-control" id="commentAuthor">
+            </div>
+            <div class="form-group">
+              <label for="newComment">새 코멘트 추가:</label>
+              <textarea class="form-control" id="newComment"></textarea>
+            </div>
+            <button id="addCommentBtn" class="btn btn-primary">등록</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery와 Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap Bundle JS (Popper.js 포함) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <!-- 관리자 여부를 JavaScript로 전달 -->
+    <script>
+        var isAdmin = {{ 'true' if current_user.is_authenticated and current_user.is_admin else 'false' }};
+    </script>
+    <!-- 커스텀 스크립트 -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
