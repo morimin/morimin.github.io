@@ -17,10 +17,10 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 # Site Settings
 #locale                   : "en-US"
 locale                   : "ko-KR"
-title                    : "별님 깃블로그"
+title                    : "펩시의 투자일기"
 title_separator          : "_"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "SMin"
+name                     : "InvestingPepsi"
 description              : "내가 좋아서 하는 깃블로그"
 #url                      : "https://asterisco.tistory.com/"
 url                      : "https://morimin.github.io"
@@ -98,7 +98,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "✦ 별님"
+  name             : "✦ 펩시"
 #  avatar           : "/assets/images/bio-photo-keyboard.jpg"
   avatar           : "main.png"
   bio              : "내가 좋아서 하는 깃블로그 :)"
@@ -121,13 +121,13 @@ author:
 #      # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/morimin"
+      url: "https://asterisco.tistory.com"
 #    - label: "Instagram"
 #      icon: "fab fa-fw fa-instagram"
 #      # url: "https://instagram.com/"
-    - label: "TiStory"
-      icon: "fab fa-fw fa-tistory"
-      url: "https://asterisco.tistory.com"
+    # - label: "TiStory"
+    #   icon: "fab fa-fw fa-tistory"
+    #   url: "https://asterisco.tistory.com"
 
 
 # Site Footer
@@ -141,7 +141,7 @@ footer:
 #      # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/morimin"
+      url: "https://morimin.github.io/"
 #    - label: "GitLab"
 #      icon: "fab fa-fw fa-gitlab"
 #      # url:
@@ -151,9 +151,9 @@ footer:
 #    - label: "Instagram"
 #      icon: "fab fa-fw fa-instagram"
 #      # url:
-    - label: "TiStory"
-      icon: "fab fa-fw fa-tistory"
-      url: "https://asterisco.tistory.com"
+    # - label: "TiStory"
+    #   icon: "fab fa-fw fa-tistory"
+    #   url: "https://morimin.github.io/"
 
 
 # Reading Files
