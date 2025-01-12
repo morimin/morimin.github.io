@@ -158,7 +158,7 @@ footer:
     # - label: "TiStory"
     #   icon: "fab fa-fw fa-tistory"
     #   url: "https://morimin.github.io/"
-    - label: "TiStory"
+    - label: "YouTube"
       icon: "fab fa-fw fa-youtube"
       url: "https://www.youtube.com/@Investing_Pepsi_TV"
 
