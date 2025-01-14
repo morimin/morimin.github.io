@@ -72,22 +72,15 @@
                 <span class="nav__sub-title"><a href="/categories/business"> ★ 기술 경영 경제 </a></span>
                 <ul>
                     {% for tag in site.tags %}
-                        {% if tag[0] == "REALTY" %}
-                            <li><a href="/tags/realty" class="">- 부동산 ({{tag[1].size}})</a></li>
+                        {% if tag[0] == "MBA" %}
+                            <li><a href="/tags/mba" class="">- 경영 ({{tag[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
                 <ul>
                     {% for tag in site.tags %}
-                        {% if tag[0] == "KLAYSWAP" %}
-                            <li><a href="/tags/klayswap" class="">- KlaySwap/클레이스왑 ({{tag[1].size}})</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <ul>
-                    {% for tag in site.tags %}
-                        {% if tag[0] == "LIVING" %}
-                            <li><a href="/tags/living" class="">- 생활 ({{tag[1].size}})</a></li>
+                        {% if tag[0] == "ACCOUNT" %}
+                            <li><a href="/tags/account" class="">- 회계 ({{tag[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
