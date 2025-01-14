@@ -97,25 +97,25 @@
       <li>
         {% for category in site.categories %}
             {% if category[0] == "ECONOMY" %}
-                <span class="nav__sub-title"><a href="/categories/etc"> ★ 기타 </a></span>
+                <span class="nav__sub-title"><a href="/categories/economy"> ★ 경제 </a></span>
                 <ul>
                     {% for tag in site.tags %}
                         {% if tag[0] == "REALTY" %}
-                            <li><a href="/tags/review" class="">- 부동산 ({{tag[1].size}})</a></li>
+                            <li><a href="/tags/realty" class="">- 부동산 ({{tag[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
                 <ul>
                     {% for tag in site.tags %}
                         {% if tag[0] == "AUCTION" %}
-                            <li><a href="/tags/blog" class="">- 경매 ({{tag[1].size}})</a></li>
+                            <li><a href="/tags/auction" class="">- 경매 ({{tag[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
                 <ul>
                     {% for tag in site.tags %}
                         {% if category[0] == "STOCK" %}
-                            <li><a href="/categories/programmers" class="">- 주식 ({{category[1].size}})</a></li>
+                            <li><a href="/categories/stock" class="">- 주식 ({{category[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
