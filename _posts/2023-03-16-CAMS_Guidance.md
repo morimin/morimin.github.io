@@ -4,9 +4,9 @@ excerpt: ""
 header: ""
 
 categories:
-    - IT
+    - ETC
 tags:
-    - [IT-ETC, ACAMS 자료, CAMS 자료, CAMS 덤프, AML 자격증, AML 시험, AML 자격증 공부방법]
+    - [BLOG, ACAMS 자료, CAMS 자료, CAMS 덤프, AML 자격증, AML 시험, AML 자격증 공부방법]
 last_modified_at: 2023-03-16
 ---
 <br><br>
