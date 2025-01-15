@@ -17,11 +17,11 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 # Site Settings
 #locale                   : "en-US"
 locale                   : "ko-KR"
-title                    : "펩시의 투자일기"
+title                    : "펩시의 투자기록장"
 title_separator          : "_"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "InvestingPepsi"
-description              : "내가 좋아서 하는 깃블로그"
+description              : "이것저것 투자기록을 남겨요"
 #url                      : "https://asterisco.tistory.com/"
 url                      : "https://morimin.github.io"
 git_url                  : "https://morimin.github.io"
@@ -98,10 +98,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "✦ 펩시"
+  name             : "✦ 펩시의 투자기록"
 #  avatar           : "/assets/images/bio-photo-keyboard.jpg"
   avatar           : "main.png"
-  bio              : "내가 좋아서 하는 깃블로그 :)"
+  bio              : "이것저것 투자내용을 기록하고 공유합니다. :)"
   location         : "South Korea"
 #  email            :
   links:
