@@ -69,7 +69,7 @@
       <li>
         {% for category in site.categories %}
             {% if category[0] == "BUSINESS" %}
-                <span class="nav__sub-title"><a href="/categories/business"> ★ 기술 경영 경제 </a></span>
+                <span class="nav__sub-title"><a href="/categories/business"> ★ 경영 </a></span>
                 <ul>
                     {% for tag in site.tags %}
                         {% if tag[0] == "MBA" %}
@@ -79,7 +79,7 @@
                 </ul>
                 <ul>
                     {% for tag in site.tags %}
-                        {% if tag[0] == "ACCOUNT" %}
+                        {% if tag[0] == "ACCOUNTING" %}
                             <li><a href="/tags/account" class="">- 회계 ({{tag[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
