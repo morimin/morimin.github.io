@@ -12,54 +12,26 @@
       </li>
       <li>
         {% for category in site.categories %}
-            {% if category[0] == "IT" %}
-                <span class="nav__sub-title"><a href="/categories/it"> ★ IT / 테크 / 정보통신 </a></span>
+            {% if category[0] == "ECONOMY" %}
+                <span class="nav__sub-title"><a href="/categories/economy"> ★ 경제 </a></span>
                 <ul>
                     {% for tag in site.tags %}
-                        {% if tag[0] == "EXCEL" %}
-                            <li><a href="/tags/excel" class="">- EXCEL/엑셀 ({{tag[1].size}})</a></li>
+                        {% if tag[0] == "REALTY" %}
+                            <li><a href="/tags/realty" class="">- 부동산 ({{tag[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
                 <ul>
                     {% for tag in site.tags %}
-                        {% if tag[0] == "LINUX" %}
-                            <li><a href="/tags/linux" class="">- Linux/리눅스 ({{tag[1].size}})</a></li>
+                        {% if tag[0] == "AUCTION" %}
+                            <li><a href="/tags/auction" class="">- 경매 ({{tag[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
                 <ul>
                     {% for tag in site.tags %}
-                        {% if tag[0] == "RASPBERRYPI" %}
-                            <li><a href="/tags/raspberrypi" class="">- RaspberryPi/라즈베리파이 ({{tag[1].size}})</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <ul>
-                    {% for tag in site.tags %}
-                        {% if tag[0] == "AI" %}
-                            <li>- AI/DeepLearning/BlockChain </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <ul>
-                    {% for tag in site.tags %}
-                        {% if tag[0] == "TENSORFLOW" %}
-                            <li><a href="/tags/tensorflow" class="">&nbsp;&nbsp;ㄴ TensorFlow/텐서플로우 ({{tag[1].size}})</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <ul>
-                    {% for tag in site.tags %}
-                        {% if tag[0] == "AI" %}
-                            <li><a href="/tags/ai" class="">&nbsp;&nbsp;ㄴ AI/인공지능 ({{tag[1].size}})</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <ul>
-                    {% for tag in site.tags %}
-                        {% if tag[0] == "IT-ETC" %}
-                            <li><a href="/tags/it_etc" class="">- IT 기타 ({{tag[1].size}})</a></li>
+                        {% if category[0] == "STOCK" %}
+                            <li><a href="/categories/stock" class="">- 주식 ({{category[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
@@ -81,34 +53,6 @@
                     {% for tag in site.tags %}
                         {% if tag[0] == "ACCOUNTING" %}
                             <li><a href="/tags/account" class="">- 회계 ({{tag[1].size}})</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endfor %}
-      </li>
-      <li>
-        {% for category in site.categories %}
-            {% if category[0] == "ECONOMY" %}
-                <span class="nav__sub-title"><a href="/categories/economy"> ★ 경제 </a></span>
-                <ul>
-                    {% for tag in site.tags %}
-                        {% if tag[0] == "REALTY" %}
-                            <li><a href="/tags/realty" class="">- 부동산 ({{tag[1].size}})</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <ul>
-                    {% for tag in site.tags %}
-                        {% if tag[0] == "AUCTION" %}
-                            <li><a href="/tags/auction" class="">- 경매 ({{tag[1].size}})</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <ul>
-                    {% for tag in site.tags %}
-                        {% if category[0] == "STOCK" %}
-                            <li><a href="/categories/stock" class="">- 주식 ({{category[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
