@@ -89,15 +89,12 @@ jobs:
         run: |
           bundle exec htmlproofer _site --disable-external --check-html --allow_hash_href
 
-      # - name: Upload site artifact
-      #   uses: actions/upload-pages-artifact@v1
-      #   with:
-      #     path: "_site${{ steps.pages.outputs.base_path }}"
-
       - name: Upload site artifact
-        uses: actions/upload-artifact@v3
+        # uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3 ## update on 15th of Feb, 2025.
         with:
           path: "_site${{ steps.pages.outputs.base_path }}"
+
 
 
   deploy:
