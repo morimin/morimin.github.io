@@ -1,7 +1,7 @@
 # coding: utf-8
 
 Gem::Specification.new do |spec|
-  spec.name                    = "morimin-minimal-mistakes-jekyll"
+  spec.name                    = "minimal-mistakes-jekyll"
   spec.version                 = "4.19.2"
   spec.authors                 = ["Michael Rose"]
 
@@ -25,6 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake", ">= 12.3.3"
 
-  spec.add_dependency "minimal-mistakes-jekyll"
 
 end
