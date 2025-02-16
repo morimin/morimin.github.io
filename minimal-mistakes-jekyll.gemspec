@@ -1,7 +1,7 @@
 # coding: utf-8
 
 Gem::Specification.new do |spec|
-  spec.name                    = "minimal-mistakes-jekyll"
+  spec.name                    = "morimin-minimal-mistakes-jekyll"
   spec.version                 = "4.19.2"
   spec.authors                 = ["Michael Rose"]
 
