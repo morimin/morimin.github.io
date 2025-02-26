@@ -34,7 +34,7 @@ masthead_title           : # overrides the website title displayed in the masthe
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : "false" # 블로그 댓글 기능 false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  provider               : "true" # 블로그 댓글 기능 false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
     shortname            : # 블로그 댓글 기능 https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -50,6 +50,13 @@ comments:
   staticman:
     branch               : # "main"
     endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
+  gitalk:
+    enable: true
+    clientID: Ov23lijt7wgcQJflSYwX
+    clientSecret: 80632e4d9f57fa2ce922478fdd85f9b673cb2055
+    repo: morimin.githun.io
+    owner: morimin
+    admin: morimin
 reCaptcha:
   siteKey                :
   secret                 :
@@ -133,14 +140,7 @@ author:
       url: "https://www.youtube.com/@Investing_Pepsi_TV"
     
 
-# Gitalk 
-gitalk:
-  enable: true
-  clientID: Ov23lijt7wgcQJflSYwX
-  clientSecret: 80632e4d9f57fa2ce922478fdd85f9b673cb2055
-  repo: morimin.githun.io
-  owner: morimin
-  admin: morimin
+
 
 
 # Site Footer
