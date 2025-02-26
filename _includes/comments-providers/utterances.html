@@ -9,16 +9,16 @@
     }
 
     var script = document.createElement('script');
-    // script.setAttribute('src', 'https://utteranc.es/client.js');
-    // script.setAttribute('repo', '{{ site.repository }}');
-    // script.setAttribute('issue-term', '{{ site.comments.utterances.issue_term | default: "pathname" }}');
-    // script.setAttribute('theme', '{{ site.comments.utterances.theme | default: "github-light" }}');
-    // script.setAttribute('crossorigin', 'anonymous');
     script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'morimin/morimin.github.io');
-    script.setAttribute('issue-term', 'url');
-    script.setAttribute('theme', 'github-dark');
+    script.setAttribute('repo', '{{ site.comments.utterances.repo }}');
+    script.setAttribute('issue-term', '{{ site.comments.utterances.issue_term | default: "pathname" }}');
+    script.setAttribute('theme', '{{ site.comments.utterances.theme | default: "github-light" }}');
     script.setAttribute('crossorigin', 'anonymous');
+    // script.setAttribute('src', 'https://utteranc.es/client.js');
+    // script.setAttribute('repo', 'morimin/morimin.github.io');
+    // script.setAttribute('issue-term', 'url');
+    // script.setAttribute('theme', 'github-dark');
+    // script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
