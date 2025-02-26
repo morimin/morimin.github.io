@@ -153,6 +153,7 @@ categories:
 tags:
     - ${fmtags}
 last_modified_at: ${date}
+comments: true
 ---
 <br><br>
 `;
