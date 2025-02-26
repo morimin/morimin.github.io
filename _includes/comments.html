@@ -153,18 +153,10 @@
     {% when "utterances" %}
       <h4 class="page__comments-title">{{ comments_label }}</h4>
       <section id="utterances-comments"></section>
-      <script src="https://utteranc.es/client.js"
-            repo="morimin/morimin.github.io"
-            issue-term="url"
-            theme="github-dark"
-            crossorigin="anonymous"
-            async>
-      </script>
-
-  
-    {% include gitalk-comment.html %}
   
     {% when "custom" %}
       <section id="custom-comments"></section>
+    {% when "gitalk" %}
+      {% include gitalk-comment.html %}
   {% endcase %}
 </div>
