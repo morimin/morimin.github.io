@@ -133,6 +133,15 @@ author:
       url: "https://www.youtube.com/@Investing_Pepsi_TV"
     
 
+# Gitalk 
+gitalk:
+  enable: true
+  clientID: Ov23lijt7wgcQJflSYwX
+  clientSecret: 80632e4d9f57fa2ce922478fdd85f9b673cb2055
+  repo: morimin.githun.io
+  owner: morimin
+  admin: morimin
+
 
 # Site Footer
 footer:
