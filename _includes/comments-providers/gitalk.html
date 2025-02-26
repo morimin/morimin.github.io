@@ -1,15 +1,15 @@
 <!-- _includes/gitalk-comment.html -->
-{% if site.gittalk.clientID and site.gittalk.clientSecret %}
+{% if site.comments.gitalk.clientID and site.comments.gitalk.clientSecret %}
 <div id="gitalk-comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script >
   const gitalk = new Gitalk({
-    clientID: '{{ site.gittalk.clientID }}',
-    clientSecret: "{{ site.gittalk.clientSecret }}",
-    repo: "{{ site.gittalk.repository }}",
-    owner: "{{ site.gittalk.owner }}",
-    admin: ["{{ site.gittalk.admin | split: ','  | join: '","'}}"],
+    clientID: '{{ site.comments.gitalk.clientID }}',
+    clientSecret: "{{ site.comments.gitalk.clientSecret }}",
+    repo: "{{ site.comments.gitalk.repository }}",
+    owner: "{{ site.comments.gitalk.owner }}",
+    admin: ["{{ site.comments.gitalk.admin | split: ','  | join: '","'}}"],
     id: "{{ page.url }}",    // Ensure uniqueness and length less than 50 
     distractionFreeMode: false,  // Facebook-like distraction free mode
     perPage: 100
