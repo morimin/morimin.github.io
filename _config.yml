@@ -50,7 +50,7 @@ comments:
   staticman:
     branch               : # "main"
     endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
-  gittalk:
+  gitalk:
     enable               : true
     clientID             : Ov23lijt7wgcQJflSYwX
     clientSecret         : 80632e4d9f57fa2ce922478fdd85f9b673cb2055
