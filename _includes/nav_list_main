@@ -31,7 +31,7 @@
                 <ul>
                     {% for tag in site.tags %}
                         {% if tag[0] == "STOCK" %}
-                            <li><a href="/tags/stock" class="">- 주식 ({{category[1].size}})</a></li>
+                            <li><a href="/tags/stock" class="">- 주식 ({{tag[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
@@ -80,7 +80,7 @@
                 <ul>
                     {% for tag in site.tags %}
                         {% if tag[0] == "tmp" %}
-                            <li><a href="/tags/programmers" class="">- 프로그래머스 ({{category[1].size}})</a></li>
+                            <li><a href="/tags/programmers" class="">- 프로그래머스 ({{tag[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
