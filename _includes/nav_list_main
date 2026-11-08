@@ -35,6 +35,41 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
+                <ul>
+                    {% for tag in site.tags %}
+                        {% if tag[0] == "TAX" %}
+                            <li><a href="/tags/tax" class="">- 세금·절세 ({{tag[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <ul>
+                    {% for tag in site.tags %}
+                        {% if tag[0] == "FINANCE" %}
+                            <li><a href="/tags/finance" class="">- 금융상품 ({{tag[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endfor %}
+      </li>
+      <li>
+        {% for category in site.categories %}
+            {% if category[0] == "LIFE" %}
+                <span class="nav__sub-title"><a href="/categories/life"> ★ 생활정보 </a></span>
+                <ul>
+                    {% for tag in site.tags %}
+                        {% if tag[0] == "SUPPORT" %}
+                            <li><a href="/tags/support" class="">- 정부지원 ({{tag[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <ul>
+                    {% for tag in site.tags %}
+                        {% if tag[0] == "LAW" %}
+                            <li><a href="/tags/law" class="">- 생활법률 ({{tag[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
             {% endif %}
         {% endfor %}
       </li>
