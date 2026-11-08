@@ -1,41 +1,36 @@
-name: "Build and Deploy"
+# Notion → GitHub 자동 업로드
+# 노션 DB에서 '배포' 체크된 글을 _posts/ 로 가져와 커밋합니다.
+# 커밋이 push되면 GitHub Pages(브랜치 배포)가 자동으로 사이트를 빌드·배포합니다.
+name: "Import from Notion"
+
 on:
+  # 매일 오전 6시(KST) 자동 실행
+  schedule:
+    - cron: "0 21 * * *"
+  # GitHub Actions 탭의 'Run workflow' 버튼으로 수동 실행
+  workflow_dispatch:
+  # 기존 외부 호출(노션 버튼 등) 방식도 그대로 유지
   repository_dispatch:
     types: [RUN_WORKFLOW_DISPATCH]
-      
+
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
-# Allow one concurrent deployment
+# 동시에 두 번 돌지 않도록
 concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  group: "notion-import"
+  cancel-in-progress: false
 
 jobs:
   importer:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@master
-    
-      # - name: Clean Directory
-      #   run: |
-      #     for file in assets/img/*
-      #     do
-      #         if [[ $file != "assets/img/favicons" ]]
-      #         then
-      #             rm -rf "$file"
-      #         fi
-      #     done
-      #     # rm -rf _posts/*
-      
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          # node-version: "14.21.3"
-          node-version: "17"
-          # node-version: "20"
+          node-version: "22"
 
       - run: npm install
 
@@ -44,7 +39,7 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
@@ -53,57 +48,3 @@ jobs:
           commit_user_name: morimin-bot 🤖
           commit_user_email: morimin@github.com
           commit_author: morimin-bot 🤖 <morimin@github.com>
- 
-  build:
-    needs: importer
-    runs-on: ubuntu-latest
-
-    steps:           
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          ref: main
-          fetch-depth: 1
-          # submodules: true
-          # If using the 'assets' git submodule from Chirpy Starter, uncomment above
-          # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
-
-      - name: Setup Pages
-        id: pages
-        # uses: actions/configure-pages@v1
-        uses: actions/configure-pages@v2 # update on 15th of Feb, 2025.
-        # uses: actions/configure-pages@v3
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1' # reads from a '.ruby-version' or '.tools-version' file if 'ruby-version' is omitted
-          bundler-cache: true
-
-      - name: Build site
-        run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: "production"
-
-      - name: Test site
-        run: |
-          bundle exec htmlproofer _site --disable-external --check-html --allow_hash_href
-
-      - name: Upload site artifact
-        # uses: actions/upload-pages-artifact@v1
-        uses: actions/upload-pages-artifact@v3 ## update on 15th of Feb, 2025.
-        with:
-          path: "_site${{ steps.pages.outputs.base_path }}"
-
-
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1

@@ -44,6 +44,11 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
   const root = "_posts";
   fs.mkdirSync(root, { recursive: true });
 
+  // 오늘 날짜(한국 시간 기준)
+  const today = moment().utcOffset(9 * 60).format("YYYY-MM-DD");
+  // 이미지 다운로드 작업 모음 (모두 끝난 뒤 종료)
+  const downloads = [];
+
   const databaseId = process.env.DATABASE_ID;
   let response = await notion.databases.query({
     database_id: databaseId,
@@ -78,6 +83,11 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
     let pdate = r.properties?.["날짜"]?.["date"]?.["start"];
     if (pdate) {
       date = moment(pdate).format("YYYY-MM-DD");
+    }
+    // 예약 발행: '날짜'가 오늘(KST)보다 미래면 이번에는 건너뜀
+    if (date > today) {
+      console.log(`[예약] ${date} 발행 예정이라 건너뜀: ${id}`);
+      continue;
     }
     // title
     let title = id;
@@ -178,18 +188,24 @@ comments: true
         }
         const filename = path.join(dirname, `${index}.png`);
 
-        axios({
-          method: "get",
-          url: p2,
-          responseType: "stream",
-        })
-          .then(function (response) {
-            let file = fs.createWriteStream(`${filename}`);
-            response.data.pipe(file);
+        downloads.push(
+          axios({
+            method: "get",
+            url: p2,
+            responseType: "stream",
           })
-          .catch(function (error) {
-            console.log(error);
-          });
+            .then(function (response) {
+              return new Promise((resolve, reject) => {
+                const file = fs.createWriteStream(`${filename}`);
+                response.data.pipe(file);
+                file.on("finish", resolve);
+                file.on("error", reject);
+              });
+            })
+            .catch(function (error) {
+              console.log(`이미지 다운로드 실패: ${p2}`, error.message);
+            })
+        );
 
         let res;
         if (p1 === "") res = "";
@@ -200,10 +216,9 @@ comments: true
     );
 
     //writing to file
-    fs.writeFile(path.join(root, ftitle), fm + edited_md, (err) => {
-      if (err) {
-        console.log(err);
-      }
-    });
+    fs.writeFileSync(path.join(root, ftitle), fm + edited_md);
   }
+
+  await Promise.all(downloads);
+  console.log(`완료: 글 ${pages.length}개 확인, 이미지 ${downloads.length}개 처리`);
 })();
