@@ -20,14 +20,6 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "devDependencies": {
-    "@notionhq/client": "^1.0.4",
-    "@types/node-fetch": "^2.6.2",
-    "moment": "^2.29.2",
-    "node-fetch": "^2.6.7",
-    "notion-to-md": "^2.5.5",
-    "axios": "^1.4.0"
-  },
   "scripts": {
     "uglify": "uglifyjs assets/js/vendor/jquery/jquery-3.4.1.js assets/js/plugins/jquery.fitvids.js assets/js/plugins/jquery.greedy-navigation.js assets/js/plugins/jquery.magnific-popup.js assets/js/plugins/jquery.ba-throttle-debounce.js assets/js/plugins/smooth-scroll.js assets/js/plugins/gumshoe.js assets/js/_main.js -c -m -o assets/js/main.min.js",
     "add-banner": "node banner.js",
