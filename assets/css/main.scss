@@ -28,3 +28,15 @@
 .page__content .notice ul, .page__content [class*="notice--"] ul { margin-bottom: 0; }
 .page__content .notice #markdown-toc, .page__content .notice ul#markdown-toc { margin: .3em 0 0; padding-left: 1.2em; }
 .page__content #markdown-toc li { margin-bottom: .15em; line-height: 1.6; }
+
+// ===== 레이아웃 여백 (2026-11-13): 본문과 좌측 메뉴·우측 광고 사이 간격 =====
+@media (min-width: 64em) {
+  .page .page__inner-wrap { padding-left: 1.5em; padding-right: 1.5em; box-sizing: border-box; }
+  .sidebar { border-right: 1px solid rgba(255,255,255,.08); padding-right: 1em; box-sizing: border-box; }
+  .sidebar__right { padding-left: 1.5em; }
+}
+@media (min-width: 80em) {
+  #main { max-width: 1360px; padding-left: 2em; padding-right: 2em; }
+  .page .page__inner-wrap { padding-left: 2.5em; padding-right: 2em; }
+  .sidebar__right { padding-left: 1.5em; }
+}
