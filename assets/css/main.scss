@@ -11,3 +11,20 @@
 // add it for git action by notion on 4th of July, 2024.
 @import "minimal-mistakes/vendor/breakpoint/breakpoint"; // error confirming on 6th of July, 2024.
 // @import "minimal-mistakes/vendor/breakpoint"; // error confirming on 18th of July, 2024.
+
+// ===== 가독성 개선 (2026-11-13) =====
+// 한글 본문 줄 간격·글자 크기, 어두운 테마(dark skin)에 맞춘 표·구분선, 요약/목차 상자
+@media (min-width: 64em) { html { font-size: 19px; } }
+@media (min-width: 80em) { html { font-size: 20px; } }
+.page__content p, .page__content li { line-height: 1.8; }
+.page__content p { margin: 0 0 1.1em; }
+.page__content li { margin-bottom: .35em; }
+.page__content h2 { margin-top: 2.2em; padding-bottom: .3em; border-bottom: 1px solid rgba(255,255,255,.15); }
+.page__content h3 { margin-top: 1.6em; }
+.page__content table { font-size: .82em; }
+.page__content tbody tr:nth-child(even) { background: rgba(255,255,255,.05); }
+.page__content tbody tr:hover { background: rgba(255,255,255,.09); }
+.page__content .notice, .page__content [class*="notice--"] { font-size: .9em; line-height: 1.75; }
+.page__content .notice ul, .page__content [class*="notice--"] ul { margin-bottom: 0; }
+.page__content .notice #markdown-toc, .page__content .notice ul#markdown-toc { margin: .3em 0 0; padding-left: 1.2em; }
+.page__content #markdown-toc li { margin-bottom: .15em; line-height: 1.6; }
